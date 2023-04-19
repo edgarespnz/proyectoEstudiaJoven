@@ -10,6 +10,8 @@ import ForgotPassword from './auth/ForgotPassword';
 import Profile from './components/Pages/Profile';
 import VerifyEmail from './components/Pages/VerifyEmail';
 import Dashboard from './components/Pages/Dashboard';
+import Course from './components/Pages/Course';
+import Header from './components/Pages/Header';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,9 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard' , element: <PrivateRoute><Dashboard/></PrivateRoute>
+  },
+  {
+    path: 'courses/course' , element: <PrivateRoute><Course/></PrivateRoute>
   }
 ])
 
@@ -44,6 +49,7 @@ root.render(
 
   <AuthProvider>
     <>
+    <Header/>
       <RouterProvider router={router} />
     </>
   </AuthProvider>

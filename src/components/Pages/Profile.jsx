@@ -38,7 +38,7 @@ export default function Profile() {
 
     return (
         <>
-            <Header />
+           
             <div className='container-fluid'>
                 <Row style={{ minHeight: '92.5vh' }}>
                     <Col sm={2} className="bg-light sidebar mt-2">
@@ -46,7 +46,7 @@ export default function Profile() {
                     </Col>
                     <Col sm={8}>
                         <main role="main">
-                            <div className="inner-adjust">
+                            <div className="inner-adjust p-2">
                                 <div className="pt-3 pb-2 mb-3 border-bottom">
                                     <h1 className="h2">Mi Perfil</h1>
                                 </div>

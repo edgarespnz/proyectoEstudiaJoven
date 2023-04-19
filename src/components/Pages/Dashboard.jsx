@@ -1,14 +1,31 @@
-import React from 'react'
-import Header from './Header'
+import React, { useState } from 'react'
 import LeftNavBar from '../LeftNavBar'
-import { Row, Col, Container, ListGroup, CardGroup, Card } from 'react-bootstrap'
-import CourseCard from '../CourseCard'
+import { Row, Col, Container, ListGroup, CardGroup, Card, OffcanvasHeader, OffcanvasTitle, OffcanvasBody } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
+import OffCanvasCourse from '../OffCanvasCourse'
+
 
 export default function Dashboard() {
+  const [show, setShow] = useState(false)
+
+  const handleShow = () => {setShow(true)}
+  const handleClose = () => {setShow(false)}
+
+  function createOffCanvas() {
+    return (
+        <OffCanvasCourse 
+        title = {"Título del curso"}
+        show = {show}
+        close = {handleClose}
+        
+        body={"cuerpo"}/>
+      )
+  }
+
   return (
     <>
-      <Header />
       <div className='container-fluid'>
+        {createOffCanvas()}
         <Row style={{ minHeight: '92.5vh' }}>
           <Col sm={2} className="bg-light sidebar mt-2">
             <LeftNavBar />
@@ -24,12 +41,12 @@ export default function Dashboard() {
                   <Row xs={1} md={2} className="g-4">
                     {Array.from({ length: 4 }).map((_, idx) => (
                       <Col key={idx}>
-                        <Card>
+                        <Card style={{ cursor: 'pointer' }} onClick={handleShow}>
                           <Card.Img variant="top" src="holder.js/100px160" />
                           <Card.Body>
-                            <Card.Title>Curso {idx+1} </Card.Title>
+                            <Card.Title>Cursos nivel : {idx + 1} </Card.Title>
                             <Card.Text>
-                              Descripción del curso {idx+1}
+                              Descripción del curso {idx + 1}
                             </Card.Text>
                           </Card.Body>
                         </Card>
