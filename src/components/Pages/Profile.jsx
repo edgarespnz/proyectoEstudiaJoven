@@ -8,6 +8,7 @@ import LeftNavBar from '../LeftNavBar';
 export default function Profile() {
 
     const [rol, setRol] = useState("")
+    const [nombre , setNombre] = useState("")
     const { currentUser, getUserData, logout } = useAuth();
 
     const [error, setError] = useState();
@@ -16,6 +17,7 @@ export default function Profile() {
     async function getData() {
         const data = await getUserData()
         setRol(data.rol)
+        setNombre(data.name)
     }
 
 
@@ -43,15 +45,15 @@ export default function Profile() {
                         <LeftNavBar />
                     </Col>
                     <Col sm={8}>
-                        <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-4">
+                        <main role="main">
                             <div className="inner-adjust">
                                 <div className="pt-3 pb-2 mb-3 border-bottom">
                                     <h1 className="h2">Mi Perfil</h1>
                                 </div>
                                 <div className="media">
-                                    <img className="align-self-start mr-5 img-thumbnail rounded-circle" src='../assets/dummy-user.jpg' />
+                                    <img className="align-self-start mr-5 img-thumbnail rounded-circle" src='https://images7.memedroid.com/images/UPLOADED928/61eaa2fcc21dc.jpeg' style={{width: "150px", height: "100px"}}/>
                                     <div className="media-body">
-                                        <h1>Hola: <strong>{currentUser.displayName != null ? currentUser.displayName : "usuario"}</strong></h1>
+                                        <h1>Hola: <strong>{nombre !== "" ? nombre : "usuario"}</strong></h1>
                                         <p>Rol: <strong>{rol !== "" ? rol : null}</strong></p>
                                         <p>ID de usuario: <strong>{currentUser.uid}</strong></p>
                                         <p>Email: <strong>{currentUser.email}</strong></p>

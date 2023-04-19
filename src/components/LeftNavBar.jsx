@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, ListGroup } from 'react-bootstrap'
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 export default function LeftNavBar({ props }) {
@@ -26,12 +26,12 @@ export default function LeftNavBar({ props }) {
 
     return (
         <ListGroup as="ul">
-            <ListGroup.Item as="li" active>
+            <Link to={"/profile"} style={{textDecoration: "none"}}><ListGroup.Item as="li">
                 <i className="fas fa-user"></i> Mi perfil
-            </ListGroup.Item>
-            <ListGroup.Item as="li" disabled={props}>
-                Cursos
-            </ListGroup.Item>
+            </ListGroup.Item></Link>
+            <Link to={"/dashboard"} style={{textDecoration: "none"}}><ListGroup.Item as="li" style={{cursor: 'pointer'}} >
+                Dashboard
+            </ListGroup.Item> </Link>
             <ListGroup.Item as="li" style={{cursor: 'pointer'}} onClick={handleLogOut}><i className="fas fa-sign-out-alt"></i> Log out</ListGroup.Item>
         </ListGroup>
     )

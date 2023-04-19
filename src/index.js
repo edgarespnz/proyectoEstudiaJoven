@@ -5,15 +5,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import SignUp from './auth/SignUp';
 import Login from './auth/Login';
 import { AuthProvider } from './context/AuthContext';
-import Dashboard from './components/Pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
 import ForgotPassword from './auth/ForgotPassword';
 import Profile from './components/Pages/Profile';
 import VerifyEmail from './components/Pages/VerifyEmail';
+import Dashboard from './components/Pages/Dashboard';
 
 const router = createBrowserRouter([
   {
-    basename : "/proyectoEstudiaJoven"
+    basename : "/dashboard"
   },
   
   {
@@ -23,16 +23,16 @@ const router = createBrowserRouter([
     path: '/login' , element: <Login/>
   },
   {
-    path: '/profile' , element: <PrivateRoute><Dashboard/></PrivateRoute>
+    path: '/profile' , element: <PrivateRoute><Profile/></PrivateRoute>
   },
   {
     path: '/reset-password' , element: <ForgotPassword/>
   },
   {
-    path: '/dashboard' , element: <PrivateRoute><Profile/></PrivateRoute>
+    path: '/verify-email' , element: <PrivateRoute><VerifyEmail/></PrivateRoute>
   },
   {
-    path: '/verify-email' , element: <PrivateRoute><VerifyEmail/></PrivateRoute>
+    path: '/dashboard' , element: <PrivateRoute><Dashboard/></PrivateRoute>
   }
 ])
 
