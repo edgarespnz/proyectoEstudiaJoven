@@ -11,7 +11,11 @@ import ForgotPassword from './auth/ForgotPassword';
 import Profile from './components/Pages/Profile';
 import VerifyEmail from './components/Pages/VerifyEmail';
 
-const router = createHashRouter([
+const router = createBrowserRouter([
+  {
+    basename : "/proyectoEstudiaJoven"
+  },
+  
   {
     path: '/signup' , element: <SignUp />,
   },
@@ -31,6 +35,8 @@ const router = createHashRouter([
     path: '/verify-email' , element: <PrivateRoute><VerifyEmail/></PrivateRoute>
   }
 ])
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
