@@ -11,7 +11,7 @@ import ForgotPassword from './auth/ForgotPassword';
 import Profile from './components/Pages/Profile';
 import VerifyEmail from './components/Pages/VerifyEmail';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/signup' , element: <SignUp />,
   },
