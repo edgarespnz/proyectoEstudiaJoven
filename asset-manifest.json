@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/proyectoEstudiaJoven/static/css/main.c2cab247.css",
+    "main.js": "/proyectoEstudiaJoven/static/js/main.ce4b1289.js",
+    "index.html": "/proyectoEstudiaJoven/index.html",
+    "main.c2cab247.css.map": "/proyectoEstudiaJoven/static/css/main.c2cab247.css.map",
+    "main.ce4b1289.js.map": "/proyectoEstudiaJoven/static/js/main.ce4b1289.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2cab247.css",
+    "static/js/main.ce4b1289.js"
+  ]
+}
