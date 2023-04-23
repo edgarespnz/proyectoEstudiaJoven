@@ -1,9 +1,8 @@
 import { Offcanvas } from 'react-bootstrap';
 import React from 'react';
 
-export default function OffCanvasCourse(props) {
+export default function CourseOffCanvas(props) {
   return (
-
     <Offcanvas
       show={props.show}
       onHide={props.close}
@@ -11,7 +10,7 @@ export default function OffCanvasCourse(props) {
         placement = "end"
     >
     <Offcanvas.Header closeButton>
-    <Offcanvas.Title>{props.title}</Offcanvas.Title>
+    <Offcanvas.Title ><h1 style={{textTransform: 'uppercase'}}>{props.title}</h1></Offcanvas.Title>
     </Offcanvas.Header>
       <Offcanvas.Body>
         {props.body}

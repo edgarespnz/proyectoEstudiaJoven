@@ -7,6 +7,7 @@ import { db } from '../firebase';
 
 const AuthContext = React.createContext();
 
+
 export function useAuth() {
   return useContext(AuthContext)
 }
@@ -36,9 +37,8 @@ export function AuthProvider({ children }) {
   
   async function getUserData(){
     const auth = getAuth();
-    const userId = auth.currentUser.uid;
 
-    const docRef = doc(db, "users", userId)
+    const docRef = doc(db, "users", currentUser.uid)
     const docSnap = await getDoc(docRef)
 
     if(docSnap.exists()){
@@ -47,8 +47,9 @@ export function AuthProvider({ children }) {
     else{
       console.log("no existe el documento")
     }
-
   }
+
+  
 
   function logout() {
     return auth.signOut();
@@ -61,6 +62,8 @@ export function AuthProvider({ children }) {
   function sendVerifyEmail(){
     return auth.sendEmailVerification()
   }
+
+
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {

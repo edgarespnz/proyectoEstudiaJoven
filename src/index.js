@@ -12,6 +12,7 @@ import VerifyEmail from './components/Pages/VerifyEmail';
 import Dashboard from './components/Pages/Dashboard';
 import Course from './components/Pages/Course';
 import Header from './components/Pages/Header';
+import CreateNewCourse from './components/Pages/CreateNewCourse';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,9 @@ const router = createBrowserRouter([
   },
   {
     path: 'courses/course' , element: <PrivateRoute><Course/></PrivateRoute>
+  },
+  {
+    path: '/create-new-course' , element: <PrivateRoute><CreateNewCourse/></PrivateRoute>
   }
 ])
 
